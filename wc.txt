@@ -1,0 +1,7 @@
+hello
+python
+word
+hello
+python
+abc
+abc
