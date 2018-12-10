@@ -1,10 +1,9 @@
-import sys
 from pyspark import SparkConf,SparkContext
 
 
 if __name__ == '__main__':
 
-    conf = SparkConf()
+    conf = SparkConf().setMaster("local[2]").setAppName("topn")
     sc = SparkContext(conf=conf)
 
     counts = sc.textFile('topn.txt')\
