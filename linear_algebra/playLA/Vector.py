@@ -1,5 +1,5 @@
 """
-向量
+自定义向量
 """
 import math
 from ._global import EPSILON
@@ -39,6 +39,12 @@ class Vector:
             "Error in subtracting. Length of vectors must be same."
         # return Vector([a - b for a,b in zip(self._values, other._values)]) # 重写了迭代器
         return Vector([a - b for a,b in zip(self, other)])
+
+    def dot(self, other):
+        """向量的点乘，返回结果标量"""
+        assert len(self) == len(other),\
+            "Error in dot product. Length of vectors must be same."
+        return sum(a * b for a,b in zip(self, other))
 
     def __mul__(self, other):
         """向量乘法，返回结果向量： self * other"""

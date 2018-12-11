@@ -1,3 +1,7 @@
+"""
+自定义向量的练习
+"""
+
 from linear_algebra.playLA.Vector import Vector
 
 if __name__ == '__main__':
@@ -28,3 +32,4 @@ if __name__ == '__main__':
     except ZeroDivisionError:
         print("Cannot normalize zero vector {}.".format(zero2))
 
+    print("{} dot {} = {}".format(v1, v2, v1.dot(v2)))
