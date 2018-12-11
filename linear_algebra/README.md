@@ -11,7 +11,7 @@ def norm(self):
     """返回向量的模"""
     return math.sqrt(sum(e**2 for e in self._values))
 ```
-
+ 
 2. 向量加法
 ```python
 def __add__(self, other):
