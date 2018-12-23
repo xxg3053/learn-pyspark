@@ -1,6 +1,9 @@
 from linear_algebra.playLA.Vector import Vector
 
+"""
 
+矩阵
+"""
 class Matrix:
 
     def __init__(self, list2d):
@@ -20,6 +23,20 @@ class Matrix:
         assert self.shape() == other.shape(), \
             "Error in subing. Shape of matrix must be same."
         return Matrix([[a - b for a, b in zip(self.row_vector(i), other.row_vector(i))] for i in range(self.row_num())])
+
+    def dot(self, other):
+        """返回矩阵乘法的结果"""
+        if isinstance(other, Vector):
+            # 矩阵和向量的乘法
+            assert self.col_num() == len(other),\
+                "Error in Matrix-Vector Multiplication."
+            return Vector([self.row_vector(i).dot(other) for i in range(self.row_num())])
+
+        if isinstance(other, Matrix):
+            # 矩阵和矩阵的乘法
+            assert self.col_num() == other.row_num(),\
+                "Error in Matrix-Matrix Multiplication."
+            return Matrix([[self.row_vector(i).dot(other.col_vector(j)) for j in range(other.col_num())] for i in range(self.row_num())])
 
     def __mul__(self, k):
         """返回矩阵的数量乘结果：self * k"""

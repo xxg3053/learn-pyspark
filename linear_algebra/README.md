@@ -71,3 +71,13 @@ def dot(self, other):
 #### numpy中向量的使用
 [代码](https://github.com/xxg3053/learn-pyspark/blob/master/linear_algebra/main_numpy_vector.py)
 
+
+## 矩阵
+
+#### 矩阵乘法
+矩阵A的列数必须和矩阵B的行数一致   
+A 是m*k的矩阵， B是k*n的矩阵，则结果矩阵为m*n的矩阵    
+矩阵乘法不遵守交换率    
+
+#### 矩阵应用
+
